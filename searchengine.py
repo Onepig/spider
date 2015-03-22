@@ -2,6 +2,7 @@ import urllib2
 from BeautifulSoup import *
 from urlparse import urljoin
 import sqlite3
+# add this line for test
 
 ignorewords=set(['the', 'of', 'and', 'a', 'in', 'is', 'it'])
 
