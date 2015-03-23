@@ -3,7 +3,9 @@ import urllib2
 
 def downfromurl(url):
             r=urllib2.urlopen(url)
-            print r.read()
+            soup=BeautifulSoup(r.read())
+##            print soup.title.string
+            return soup.title.string
 
 
 
