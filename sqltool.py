@@ -51,20 +51,7 @@ class database(object):
                 except:
                         pass
 
-        
-                
-                        
-                
-
-                
-                        
-                        
-
-        
-
-
-
-
+                      
 if __name__=='__main__':
             db=database('D:\Python')
             db.connect_db('mydatabase.db')
