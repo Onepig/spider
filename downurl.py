@@ -1,29 +1,45 @@
+# -*- coding: cp936 -*-
 from bs4 import BeautifulSoup
 import urllib2
 from httphand import httphand
 
 def downfromurl(url):
-##            r=urllib2.urlopen(url)
-##            print r.read()
-##            soup=BeautifulSoup(r.read())
-##            print soup.title.string
+            '''r=urllib2.urlopen(url)
+            print r.read()
+            soup=BeautifulSoup(r.read())
+            print soup.title.string'''
             tmp={}
             page=httphand()
             result=page.geturl(url)
-##            print result['data']
+            print result['data']
             sop=BeautifulSoup(result['data'])
-            print sop.find_all('a',{'href':True})
-##                        print str
-##            print sop.get_text()
-##            links=sop.findAll("a",{'href':True})
-##            try:
-##                        title = sop.head.title.string
-##            except AttributeError:
-##                        title="NULL"
-##                        pass
-##            tmp['response']=result['response']
-##            tmp['title']=title
-##            tmp['url']=url
+##            print sop.find_all('a',{'href':True})
+            
+            '''for string in sop.stripped_strings:
+                        print string
+                        print '\n'''
+
+# 获取网页链接的标题
+            titles=[]
+            for link in sop.findAll("a",{'href':True}):# link 是tag 类型
+                        try:
+                                    string =unicode(link.string)
+                                    print string
+                                    if string != 'None':
+##                                                print link 
+                                                print string
+                        except:
+                                    pass
+
+            
+            '''try:
+                        title = sop.head.title.string
+            except AttributeError:
+                        title="NULL"
+                        pass
+            tmp['response']=result['response']
+            tmp['title']=title
+            tmp'[url']=url'''
             
             
                         
